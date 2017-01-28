@@ -1,0 +1,84 @@
+.header-container {
+    display: flex;
+    position: fixed;
+    height: 22%;
+    width: 100%;
+    color: #fafafa;
+
+    .logo {
+        display: block;
+        text-indent: -9999px;
+        width: 15%;
+        height: auto;
+        background: url('../../assets/logo.svg') no-repeat;
+        background-size: 100% 100%;
+        margin-top: 4%;
+        margin-left: 1%;
+    }
+
+    .header-title {
+        align-self: flex-end;
+        width: 55%;
+        height: auto;
+        margin-top: 4%;
+        margin-left: 2%;
+        margin-bottom: 1%;
+        font-size: 6vw;
+        font-weight: 300;
+
+        .divider {
+            font-weight: 100;
+        }
+
+        .state {
+            opacity: 0.3;
+            font-size: 4.5vw;
+        }
+    }
+
+    .watcher {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        width: 30%;
+        height: auto;
+        font-size: 1.5vw;
+
+        .date {
+            margin-bottom: 5%;
+            margin-left: 5%;
+        }
+
+        .inner-watcher {
+            display: flex;
+
+            .content{
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                flex-direction: column;
+                width: 60%;
+
+                .time {
+                    font-size: 3.2vw;
+                }
+
+                .zone {
+                    font-size: 1.2vw;
+                    font-weight: 100;
+                    opacity: 0.5;
+                }
+            }
+            
+            .icon-watch {
+                display: block;
+                text-indent: -9999px;
+                height: 80px;
+                width: 25%;
+                margin-top: 2%;
+                background: url('../../assets/clock.svg') no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
