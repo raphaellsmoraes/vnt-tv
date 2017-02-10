@@ -6,19 +6,18 @@ import { City } from './shared/model/city.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   private cities: any = {};
 
   ngOnInit() {
-    this.cities['campinas'] = new City('campinas', 'SP', true);
+    this.cities['campinas'] = new City('Campinas', 'SP', true);
     this.cities['saopaulo'] = new City('São Paulo', 'SP', false);
-    this.getCity();
   }
 
-  private getCity() {
+  getCity() {
     return {
-      campinas: this.cities['campinas'],
-      saopaulo: this.cities['saopaulo']
+      campinas: this.cities['campinas'].active,
+      saopaulo: this.cities['saopaulo'].active
     };
   }
 }

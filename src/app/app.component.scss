@@ -1,20 +1,20 @@
 .ericsson-background {
-    display: flex;
-    z-index: -9999;
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    height:100%;
-    width:100%;
-    background-size:100% auto;
-
-    &.campinas {
-        background-image: url('../assets/background/background_weather-campinas.jpg');
-    }
-
-    &.saopaulo {
-        background-image: url('../assets/background/background_weather-sao-paulo.jpg');
-    }
+  display: flex;
+  z-index: -9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  &.campinas {
+    background-image: url('/assets/background/background_weather-campinas.jpg');
+  }
+  &.saopaulo {
+    background-image: url('/assets/background/background_weather-sao-paulo.jpg');
+  }
 }

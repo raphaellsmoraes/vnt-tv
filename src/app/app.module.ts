@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FeedComponent } from './feed/feed.component';
 import { ActionButtonComponent } from './feed/action-button/action-button.component';
 import { WeatherComponent } from './feed/weather/weather.component';
+import { WeatherService } from './shared/services/weather.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { WeatherComponent } from './feed/weather/weather.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    WeatherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
