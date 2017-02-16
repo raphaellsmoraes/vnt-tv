@@ -1,4 +1,4 @@
-<div class="ericsson-background" [ngClass]="getCity()">
-  <app-header></app-header>
-  <app-feed></app-feed>
+<div class="ericsson-background" [ngStyle]="setStyles()">
+  <app-header [city]="cities[0]"></app-header>
+  <app-feed [city]="cities[0]"></app-feed>
 </div>

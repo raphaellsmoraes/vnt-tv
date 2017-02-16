@@ -6,17 +6,19 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FeedComponent } from './feed/feed.component';
-import { ActionButtonComponent } from './feed/action-button/action-button.component';
-import { WeatherComponent } from './feed/weather/weather.component';
 import { WeatherService } from './shared/services/weather.service';
+import { WeatherCardComponent } from './feed/weather-list/weather-card/weather-card.component';
+import { WeatherListComponent } from './feed/weather-list/weather-list.component';
+import { ClockComponent } from './header/clock/clock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FeedComponent,
-    ActionButtonComponent,
-    WeatherComponent
+    WeatherCardComponent,
+    WeatherListComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,

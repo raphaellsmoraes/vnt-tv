@@ -1,0 +1,7 @@
+  app-weather-card {
+    max-width: 33.3%;
+    min-width: calc(33.3% / 3);
+    z-index: 9999;
+    border-right: 2px rgba(35%, 35%, 35%, 0.2) solid;
+    display: flex;
+  }

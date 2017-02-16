@@ -3,12 +3,14 @@
  */
 export class Weather {
   private text: string;
-  private date: Date;
+  public date: Date;
   private day?: string;
   private high?: number;
   private low?: number;
   public temp?: number;
   public code: number;
+  public size: string;
+  public main: boolean;
 
   constructor(obj?: any) {
     this.code = obj.code;
@@ -18,9 +20,11 @@ export class Weather {
     this.high = Number(obj.high);
     this.low = Number(obj.low);
     this.text = obj.text;
+    this.size = obj.size;
+    this.main = obj.main;
 
     if (typeof this.temp === 'undefined') {
-      this.temp = (this.high + this.low) / 2;
+      this.temp = Math.floor((this.high + this.low) / 2);
     }
   }
 }

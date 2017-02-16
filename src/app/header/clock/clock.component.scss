@@ -1,0 +1,33 @@
+    .date {
+      text-align: center;
+      margin-bottom: 5%;
+      margin-right: 10%;
+    }
+
+    .inner-clock {
+      display: flex;
+      .content {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 60%;
+        .time {
+          font-size: 3.2vw;
+        }
+        .zone {
+          font-size: 1.2vw;
+          font-weight: 100;
+          opacity: 0.5;
+        }
+      }
+      .icon-watch {
+        display: block;
+        text-indent: -9999px;
+        height: 80px;
+        width: 25%;
+        margin-top: 2%;
+        background: url('../../assets/clock.svg') no-repeat;
+        background-size: 100% 100%;
+      }
+    }

@@ -1,0 +1,12 @@
+<div class="main-weather-container" *ngIf="weather.main">
+  <div class="title-container">
+    <span class="title">{{weekday}}</span>
+    <span class="temperature">{{weather.temp}}º</span>
+  </div>
+  <span class="weather" [ngStyle]="setStyles()"></span>
+</div>
+<div class="single-weather-container" *ngIf="!weather.main">
+  <span class="title">{{weekday}}</span>
+  <span class="temperature">{{weather.temp}}º</span>
+  <span class="weather" [ngStyle]="setStyles()"></span>
+</div>
