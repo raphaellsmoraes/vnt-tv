@@ -4,7 +4,7 @@
 <div class="inner-clock">
   <div class="content">
     <span class="time">{{currentTime}}</span>
-    <span class="zone">{{city.alias}} (UTC{{city.timezone}} Hours)</span>
+    <span class="zone">{{city.alias}} (UTC<span *ngIf="city.timezone > 0">-</span>{{city.timezone}} Hours)</span>
   </div>
   <span class="icon-watch"></span>
 </div>

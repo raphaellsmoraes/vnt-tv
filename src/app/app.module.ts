@@ -10,6 +10,8 @@ import { WeatherService } from './shared/services/weather.service';
 import { WeatherCardComponent } from './feed/weather-list/weather-card/weather-card.component';
 import { WeatherListComponent } from './feed/weather-list/weather-list.component';
 import { ClockComponent } from './header/clock/clock.component';
+import { ActionsComponent } from './feed/actions/actions.component';
+import { ButtonComponent } from './feed/actions/button/button.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ClockComponent } from './header/clock/clock.component';
     FeedComponent,
     WeatherCardComponent,
     WeatherListComponent,
-    ClockComponent
+    ClockComponent,
+    ActionsComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
