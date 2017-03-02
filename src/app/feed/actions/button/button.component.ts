@@ -12,13 +12,16 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (this.type === 'Weather') {
+      this.active = true;
+    }
   }
 
   setClasses() {
     return {
-      weather: this.type === 'weather' ? false : true,
-      news: this.type === 'news' ? false : true,
-      projects: this.type === 'projects' ? false : true
+      weather: this.type === 'Weather' ? true : false,
+      news: this.type === 'News' ? true : false,
+      projects: this.type === 'Projects' ? true : false,
     };
   }
 
