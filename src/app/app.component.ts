@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from './shared/model/city.model';
+import { Event } from './shared/model/event.model';
+import { Topic } from './shared/model/topic.model';
+import { Projects } from './shared/model/projects.model';
+import { EventTypes } from './shared/interface/types.enum';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +11,71 @@ import { City } from './shared/model/city.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private cities: Array<City>;
+  private event: Event;
 
   ngOnInit() {
-    this.setCities();
+    this.setEvents(EventTypes.Weather);
     setInterval(() => {
-      this.cities = this.rotateArray(this.cities, 1);
+      this.event.cities = this.rotateArray(this.event.cities, 1);
     }, 10000);
   }
 
-  setCities() {
-    this.cities = new Array<City>();
-    this.cities.push(new City('Campinas', 'SP', 'campinas', -3, 'BRT'));
-    this.cities.push(new City('Chennai', 'TM', 'chennai', 5.5, 'IST'));
-    this.cities.push(new City('Frankfurt', 'HE', 'frankfurt', 1, 'CET'));
-    this.cities.push(new City('Karlskrona', 'K', 'karlskrona', 1, 'CET'));
-    this.cities.push(new City('Mumbai', 'MH', 'mumbai', 5.5, 'IST'));
-    this.cities.push(new City('Stockholm', 'AB', 'stockholm', 1, 'CET'));
-    this.cities.push(new City('São Paulo', 'SP', 'sao-paulo', -3, 'BRT'));
+  setEvents(eventType: EventTypes) {
+    switch (eventType) {
+      case EventTypes.Weather:
+        this.event = new Event(
+          EventTypes.Weather,
+          this.setCities()
+        );
+        break;
+      case EventTypes.News:
+        this.event = new Event(
+          EventTypes.Weather,
+          null, this.setNews()
+        );
+        break;
+      case EventTypes.Projects:
+        this.event = new Event(
+          EventTypes.Projects,
+          null, null, this.setProjects()
+        );
+        break;
+      default:
+      case EventTypes.Weather:
+        this.event = new Event(
+          EventTypes.Weather,
+          this.setCities()
+        );
+        break;
+    }
+  }
+
+  setProjects(): Array<Projects> {
+    let projects = new Array<Projects>();
+
+    return projects;
+  }
+
+  setNews(): Array<Topic> {
+    let news = new Array<Topic>();
+    return news;
+  }
+
+  setCities(): Array<City> {
+    let cities = new Array<City>();
+    cities.push(new City('Campinas', 'SP', 'campinas', -3, 'BRT'));
+    cities.push(new City('Chennai', 'TM', 'chennai', 5.5, 'IST'));
+    cities.push(new City('Frankfurt', 'HE', 'frankfurt', 1, 'CET'));
+    cities.push(new City('Karlskrona', 'K', 'karlskrona', 1, 'CET'));
+    cities.push(new City('Mumbai', 'MH', 'mumbai', 5.5, 'IST'));
+    cities.push(new City('Stockholm', 'AB', 'stockholm', 1, 'CET'));
+    cities.push(new City('São Paulo', 'SP', 'sao-paulo', -3, 'BRT'));
+    return cities;
   }
 
   setStyles() {
     let styles = {
-      'background': this.cities ? 'url(\'/assets/background/' + this.cities[0].filename + '\')' :
+      'background': this.event.cities ? 'url(\'/assets/background/' + this.event.cities[0].filename + '\')' :
         'url(\'/assets/weather/3200.png\') no-repeat center/80%'
     };
     return styles;
